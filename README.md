@@ -1,2 +1,2 @@
 # simulator
- 
+ martingale simulator application
