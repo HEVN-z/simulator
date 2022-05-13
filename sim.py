@@ -1,0 +1,1 @@
+pocket = (input('Pocket : '))
