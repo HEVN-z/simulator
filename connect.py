@@ -8,10 +8,15 @@ print(db)
 db = client['test']
 collection = db['test']
 history = collection['history']
-history.insert_one({"_id":1,"name": "5555"})
+# history.insert_one({"_id":1,"name": "Alice"})
+history.update_one({"_id":1},{"$set":{"no": "126354"}})
+history.update_one({"_id":1},{"$set":{"name": "Alice"}})
 # start = time.time()
-# y = collection.find({"name": "5555"})
+y = history.find_one({"_id": 1})
+name = y['name']
+no = y['no']
 # print('cursor object',y.cursor_id)
-# print(y)
+print(name)
+print(no)
 # end = time.time()
 # print(end-start)
