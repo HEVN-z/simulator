@@ -1,7 +1,17 @@
-from gc import collect
-from matplotlib import collections
-from pymongo import MongoClient
-mongo_db = MongoClient("mongodb://localhost:27017")
-db = mongo_db['test']
+import pymongo
+import time
+
+client = pymongo.MongoClient('mongodb://localhost:27017/')
+db = client.test
+
+print(db)
+db = client['test']
 collection = db['test']
-collection.insert_one({"name": "test"})
+history = collection['history']
+history.insert_one({"_id":1,"name": "5555"})
+# start = time.time()
+# y = collection.find({"name": "5555"})
+# print('cursor object',y.cursor_id)
+# print(y)
+# end = time.time()
+# print(end-start)
