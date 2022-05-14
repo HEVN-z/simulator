@@ -15,8 +15,7 @@ history.update_one({"_id":1},{"$set":{"name": "Alice"}})
 y = history.find_one({"_id": 1})
 name = y['name']
 no = y['no']
-# print('cursor object',y.cursor_id)
 print(name)
 print(no)
-# end = time.time()
-# print(end-start)
+end = time.time()
+print(end-start)
