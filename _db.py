@@ -15,4 +15,5 @@ post_id = posts.insert_one(post).inserted_id
 posts.delete_many({})
 
 
+
 print(db)
