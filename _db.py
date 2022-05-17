@@ -40,3 +40,4 @@ posts.delete_many({})
 end = time.time()
 
 print(end - start) # Local Server is 12-60 times faster than cloud server
+
