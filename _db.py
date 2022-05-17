@@ -39,4 +39,4 @@ print(get_from_email("555@gmail.com")['author'])
 posts.delete_many({})
 end = time.time()
 
-print(end - start)
+print(end - start) # Local Server is 12-60 times faster than cloud server
