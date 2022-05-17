@@ -14,6 +14,15 @@ posts = db.posts
 post_id = posts.insert_one(post).inserted_id
 posts.delete_many({})
 
+def get_posts():
+    return list(posts.find())
+
+def add_post(post):
+    post_id = posts.insert_one(post).inserted_id
+    return post_id
+
+def set_post(post):
+    posts.update_one({"_id": post["_id"]}, {"$set": post})
 
 
 print(db)
