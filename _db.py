@@ -1,4 +1,4 @@
-from tracemalloc import start
+from tracemalloc import begin
 import pymongo
 import os
 import time
@@ -17,6 +17,7 @@ post = {"_id":0,
         "tags": ["mongodb", "python", "pymongo"],
         "date": time.strftime("%c"),
         "email": "555@gmail.com"}
+        
 posts = db.posts
 start = time.time()
 post_id = posts.insert_one(post).inserted_id
@@ -37,7 +38,7 @@ print(post["_id"])
 set_author("555@gmail.com", "Alice")
 print(get_from_email("555@gmail.com")['author'])
 posts.delete_many({})
-end = time.time()
+stop = time.time()
 
-print(end - start) # Local Server is 12-60 times faster than cloud server
+print(stop - start) # Local Server is 12-60 times faster than cloud server
 
