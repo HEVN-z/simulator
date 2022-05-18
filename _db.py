@@ -22,7 +22,7 @@ posts = db.posts
 start = time.time()
 post_id = posts.insert_one(post).inserted_id
 
-def get_from_email(email):
+def get_data_from_email(email):
     return posts.find_one({'email': email})
 
 def add_post(post):
@@ -33,10 +33,10 @@ def set_author(email, author):
     posts.update_one({"email": email}, {"$set": {"author": author}})
 
 # print(db)
-print(get_from_email("555@gmail.com")['author'])
+print(get_data_from_email("555@gmail.com")['author'])
 print(post["_id"])
 set_author("555@gmail.com", "Alice")
-print(get_from_email("555@gmail.com")['author'])
+print(get_data_from_email("555@gmail.com")['author'])
 posts.delete_many({})
 stop = time.time()
 
