@@ -29,6 +29,20 @@ def add_post(post):
     post_id = posts.insert_one(post).inserted_id
     return post_id
 
+
+###############################################################################
+### SET
+###
+
+def set_email(email):
+    posts.update_one({"email": email}, {"$set": {"email": email}})
+
+def set_password(email, password):
+    posts.update_one({"email": email}, {"$set": {"password": password}})
+
+def set_name(email, name):
+    posts.update_one({"email": email}, {"$set": {"name": name}})
+
 def set_author(email, author):
     posts.update_one({"email": email}, {"$set": {"author": author}})
 
