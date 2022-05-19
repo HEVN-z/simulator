@@ -22,8 +22,16 @@ posts = db.posts
 start = time.time()
 post_id = posts.insert_one(post).inserted_id
 
+###############################################################################
+### GET
+###
+
 def get_data_from_email(email):
     return posts.find_one({'email': email})
+
+###############################################################################
+### ADD
+###
 
 def add_post(post):
     post_id = posts.insert_one(post).inserted_id
