@@ -29,7 +29,6 @@ def add_post(post):
     post_id = posts.insert_one(post).inserted_id
     return post_id
 
-
 ###############################################################################
 ### SET
 ###
